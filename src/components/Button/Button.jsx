@@ -1,9 +1,11 @@
 import React from 'react';
 import {cva} from 'class-variance-authority';
-import './output.css';
+import {twMerge} from 'tailwind-merge';
+import './button.css';
+import '../output.css';
 
 const button = cva(
-  'relative overflow-hidden cursor-pointer whitespace-nowrap',
+  'relative overflow-hidden cursor-pointer whitespace-nowrap text-center',
   {
     variants: {
       variant: {
@@ -32,7 +34,7 @@ const button = cva(
       },
       size: {
         sm: 'text-sm p-1 px-2 rounded-md',
-        default: 'text-lg p-2 px-4 rounded-lg',
+        md: 'text-lg p-2 px-4 rounded-lg',
         lg: 'text-xl p-3 px-6 rounded-xl',
         xl: 'text-2xl p-4 px-8 rounded-2xl',
         icon: 'p-2 rounded-full',
@@ -41,7 +43,7 @@ const button = cva(
     // compoundVariants: [{variant: 'primary', size: 'sm'}],
     defaultVariants: {
       variant: 'primary',
-      size: 'default',
+      size: 'md',
     },
   }
 );
@@ -72,7 +74,7 @@ const Button = ({children, className, variant, size, onClick, ...props}) => {
 
   return (
     <button
-      className={button({variant, size, className})}
+      className={twMerge(button({variant, size, className}))}
       onClick={createRipple}
       {...props}>
       {children}

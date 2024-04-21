@@ -1,30 +1,41 @@
 {
   "name": "tailstrapcomponents",
-  "version": "1.0.3",
+  "version": "1.0.5",
+  "description": "UI library made with TailwindCSS",
   "main": "./src/index.js",
   "files": [
     "dist/**/*"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compiler": "npm run build && npm run tailbuild",
-    "build": "babel src --out-file dist/index.js",
-    "tailbuild": "npx tailwindcss build -i src/styles.css -o dist/output.css"
+    "compiler": "npm run tailbuild && npm run build",
+    "build": "babel src -d dist --copy-files",
+    "tailbuild": "npx tailwindcss build -i styles.css -o src/components/output.css --minify"
   },
+  "keywords": [
+    "library",
+    "ui",
+    "components",
+    "tailwindcss"
+  ],
   "author": "KaushalGupta",
   "license": "ISC",
-  "description": "",
   "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "tailwind-merge": "^2.3.0"
+  },
+  "devDependencies": {
     "@babel/cli": "^7.24.1",
     "@babel/core": "^7.24.4",
     "@babel/preset-env": "^7.24.4",
     "@babel/preset-react": "^7.24.1",
-    "class-variance-authority": "^0.7.0",
+    "babel-plugin-tailwind-components": "^0.5.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.4.3"
   },
-  "devDependencies": {
-    "babel-plugin-tailwind-components": "^0.5.10"
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
