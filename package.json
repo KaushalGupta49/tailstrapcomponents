@@ -1,23 +1,30 @@
 {
-  "name": "tailwindui",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "tailstrapcomponents",
+  "version": "1.0.3",
+  "main": "./src/index.js",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compiler": "npm run build && npm run tailbuild",
+    "build": "babel src --out-file dist/index.js",
+    "tailbuild": "npx tailwindcss build -i src/styles.css -o dist/output.css"
   },
-  "author": "",
+  "author": "KaushalGupta",
   "license": "ISC",
+  "description": "",
   "dependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "@babel/preset-react": "^7.24.1",
     "class-variance-authority": "^0.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
-    "prettier-plugin-tailwindcss": "^0.5.14"
-  },
-  "peerDependencies": {
-    "tailwindcss": "^3.4.3"
+    "babel-plugin-tailwind-components": "^0.5.10"
   }
 }

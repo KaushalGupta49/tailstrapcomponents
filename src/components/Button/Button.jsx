@@ -1,5 +1,6 @@
+import React from 'react';
 import {cva} from 'class-variance-authority';
-import './btn.css';
+import './output.css';
 
 const button = cva(
   'relative overflow-hidden cursor-pointer whitespace-nowrap',

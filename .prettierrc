@@ -6,6 +6,5 @@
   "bracketSameLine": true,
   "bracketSpacing": false,
   "arrowParens": "always",
-  "singleAttributePerLine": false,
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "singleAttributePerLine": false
 }
